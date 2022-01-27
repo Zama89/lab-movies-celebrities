@@ -1,0 +1,33 @@
+<h2>Movie details</h2>
+<div id="movie-card-container">
+    <h3>Title:{{movie.title}}</h3>
+    <h3>Genre:{{movie.genre}}</h3>
+    <h3>Plot:{{movie.plot}}</h3>
+    <h3>Cast:</h3>
+        
+    <div id="celebrity-card">
+        <ul>
+            {{#each foundMovie.cast}}
+                    <li>
+                        {{name}}
+                        <p>
+                            Occupation:
+                            {{occupation}}
+                            Catch Phrase:
+                            {{catchPhrase}}
+                    
+                        </p>
+                    </li>
+            {{/each}}
+        </ul>
+    </div>
+   
+    <form action="/movies/{{movie._id}}/delete" method="post">
+    <button>Delete movie</button>
+    </form>
+    
+    <form action="/movies/{{movies._id}}/edit" method="post">
+        <button type="submit">Edit Movie</button>
+   
+    </form>
+</div>
